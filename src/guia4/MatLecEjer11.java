@@ -30,24 +30,13 @@ public class MatLecEjer11 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       int tam =0;
-       
+           
        Scanner leer = new Scanner(System.in);
        System.out.println("Por favor ingrese una frase: ");
        String palabra = leer.nextLine();
 
        System.out.println("la frase codificada es: "+codificacion(palabra) );
-       
-       
-       
-       
-//       
-//        tam = texto.length();
-//        
-//        System.out.println("El texto ingresado es " + texto);
-//        System.out.println("El tamaño es "+tam);
-//        System.out.println("la primer letra es "+ texto.charAt(0));
-        
+                   
 
     }
     public static String codificacion (String texto){
@@ -58,26 +47,27 @@ public class MatLecEjer11 {
         System.out.println("el tamaño es: " + tam);
         
         for (int i=0; i<tam; i++){
-            char letra = texto.charAt(i);
+            String  letra = texto.substring(i,i+1);
+            letra = letra.toLowerCase();
             
-            switch (texto.toLowerCase(texto.charAt(i))){
-                case 'a':
+            switch (letra){
+                case "a":
                     frase= frase+"@";
                     break;
-                case 'e':
+                case "e":
                     frase= frase+"#";
                     break;
-                case 'i':
+                case "i":
                     frase= frase+"$";
                     break;
-                case 'o':
+                case "o":
                     frase= frase+"%";
                     break;
-                case 'u':
+                case "u":
                     frase= frase+"*";
                     break;
                 default:
-                    frase= frase+String.valueOf(texto.charAt(i));
+                    frase= frase+texto.substring(i,i+1);
             }
                     
         }
